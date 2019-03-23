@@ -1,0 +1,2 @@
+/* page/enrolled/enrolled.wxss */
+@import "../../pages/common/lib/weui.wxss";

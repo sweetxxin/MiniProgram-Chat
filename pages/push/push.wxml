@@ -1,0 +1,21 @@
+<import src="../../page/common/head.wxml" />
+
+<view class="container">
+   <template is="head" data="{{title: '已报名列表（' + enrolledArrayn.length + '/6）（点击可查看详情）'}}"/>
+
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__bd">
+          <block wx:for="{{enrolledArrayc}}" wx:key="index">
+            <view class="weui-media-box weui-media-box_text" bindtap="tapDetail" id="{{index}}">
+              <view class="weui-media-box__title weui-media-box__title_in-text">{{item.departion}}</view>
+              <view class="weui-media-box__desc">{{item.society}}</view>
+              
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

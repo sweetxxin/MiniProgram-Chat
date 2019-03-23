@@ -1,0 +1,19 @@
+/* page/enroll/enroll.wxss */
+.chat{
+  height: 120rpx;
+  width: 100%;
+  background:gray;
+  padding-left: 80rpx;
+  position: relative;
+  margin-bottom: 15rpx;
+}
+.avatar{
+  height: 120rpx;
+  width: 120rpx;
+}
+.username{
+  font-size: 50rpx;
+  position: absolute;
+  top: 5rpx;
+  margin-left:20rpx; 
+}

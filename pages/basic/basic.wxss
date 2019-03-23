@@ -1,0 +1,15 @@
+/* page/basic/basic.wxss */
+@import "../../pages/common/lib/weui.wxss";
+#forwb {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#btn {
+  background-color: #7079fb;
+}
+
+#btn[disabled] {
+  background-color: #b9a2ff;
+}

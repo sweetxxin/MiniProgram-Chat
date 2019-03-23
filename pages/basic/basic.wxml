@@ -1,0 +1,102 @@
+<import src="../common/head.wxml" />
+<view class="page">
+  <view class="page__bd">
+    <!-- <view class="weui-cells__title">基本信息</view>  -->
+    <template is="head" data="{{title: '以下为全局数据，将在所有报名表生效'}}"/>
+
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">头像上传（点击可预览）</view>
+              <view class="weui-uploader__info">{{imageList.length}}/1</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <block wx:for="{{imageList}}" wx:key="*this">
+                  <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名({{ count[0] }}/ 6)</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入姓名(必填)" maxlength="6" id="0" bindinput="inputCounter" value="{{ strings[0] || '' }}"/>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <!-- <view class="weui-label">性别({{ count[1] }}/ 1)</view> -->
+          <view class="weui-label">性别</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindPickerChangeGender" value="{{indexGender}}" range="{{genderc}}">
+            <view class="weui-input">{{ genderc[indexGender] }}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">学号({{ count[1] }}/10)</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入学号" type="number" maxlength="10" id="1" bindinput="inputCounter" value="{{ strings[1] || '' }}"/>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机({{ count[2] }}/11)</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入手机号(必填)" type="number" maxlength="11" id="2" bindinput="inputCounter" value="{{ strings[2] || '' }}"/>
+        </view>
+      </view>
+      
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">专业</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindPickerChange1" value="{{indexc1}}" range="{{arrayc1}}">
+            <view class="weui-input" id="forwb">{{arrayc1[index1]}}</view>
+          </picker>
+        </view>
+      </view>
+      
+       <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">班级</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindPickerChange2" value="{{indexc2}}" range="{{arrayc2}}">
+            <view class="weui-input" id="forwb">{{arrayc2[index2]}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__tips">* 除学号外必填，注意手机号的长度</view>
+    <view class="weui-cells__tips">* 头像请务必使用自己的（尽量）正方形照片</view>
+    <view class="weui-cells__tips">* 谢谢合作</view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="showTopTips" bindtap="bindSubmit" id="btn">提交</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,52 @@
+<import src="../../page/common/head.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '详细信息'}}"/>
+
+  <view class="page-body">
+    <!-- <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">{{ _type }}</view>
+        <view class="weui-cell__ft">类型</view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__bd">{{ assoc }}</view>
+        <view class="weui-cell__ft">社团</view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__bd">{{ depart }}</view>
+        <view class="weui-cell__ft">部门</view>
+      </view>
+    </view> -->
+    <view class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">部门</view>
+          <view class="weui-form-preview__value_in-hd">{{ departion }}</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">社团</view>
+          <view class="weui-form-preview__value">{{ society }}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">类型</view>
+          <view class="weui-form-preview__value">{{ _type }}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">个人简介</view>
+           <view class="weui-form-preview__value">{{ description }}</view> 
+        </view>
+      </view>
+
+      <!-- <view class="weui-form-preview__ft">
+        <view class="weui-form-preview__btn weui-form-preview__btn_default">面试状态</view>
+        <view class="weui-form-preview__btn weui-form-preview__btn_primary">{{ turnc[turn] }}</view>
+      </view> -->
+    </view>
+  </view>
+</view>
+

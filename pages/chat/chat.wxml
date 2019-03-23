@@ -1,0 +1,8 @@
+<import src="../../pages/common/head.wxml" />
+
+<view class="container">
+  <view wx:for="{{doctorList}}" class="chat" wx:for-item="doc" bindtap='goToChat' data-id='{{doc.workId}}'>
+   <image class="avatar" src="https://pict.sweetxxin.top/3d5ef129da5c4bcd8af3d1c66313cde8.jpg"></image>
+   <text class="username">{{doc.name}}</text>
+  </view>
+</view>

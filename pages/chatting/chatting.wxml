@@ -1,0 +1,14 @@
+<view class='container'>
+  发送给<input bindinput='test2' auto-focus='true' value="{{ to }}" placeholder='说点什么儿...'></input>
+  输入<input bindinput='test' auto-focus='true' value="{{ message }}" placeholder='说点什么儿...'></input>
+  <button bindtap='send'>发送</button>
+  <form bindsubmit="formSubmit" report-submit="true">
+      <input name="input" class="input" placeholder="please input here" />
+       <button formType="submit">Submit</button>
+  </form>
+  <view wx:for="{{msgLog}}" class="chat" wx:for-index="idx" wx:for-item="msg" >
+   <text>from:{{ msg.from }}\n</text>
+   <text>to:{{ msg.to }}\n</text>
+   <text>msg:{{ msg.msg }}</text>
+   </view>
+</view>
